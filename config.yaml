@@ -1,0 +1,11 @@
+spark:
+  app_name: "appodeal-challenge"
+  master: "local[*]"
+
+impressions:
+  - "input_data/impressions.json"
+
+clicks:
+  - "input_data/clicks.json"
+
+output_dir: "output_data"
