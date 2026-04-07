@@ -89,9 +89,3 @@ Mitigations applied:
 `join_impressions_clicks` is reused by all three transforms. Without caching, Spark would recompute the same broadcast join three times.
 
 Solution: call `join_impressions_clicks` once in `solution.py`, `.cache()` the result, pass it to each transform, and `.unpersist()` before shutdown.
-
-### 6. Assumptions & Future Work
-
-- `percentile_approx` is used for median — exact for small data, approximate for large
-- For production scale: partition input by date, persist intermediate joins, add monitoring
-- Country code normalization could be added if ISO 3166 compliance is required
